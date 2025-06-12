@@ -1,0 +1,25 @@
+<?php
+session_start();
+
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['nim'])) {
+    header("Location: login_mahasiswa.php"); // Redirect ke halaman login jika belum login
+    exit();
+}
+
+$nim = $_SESSION['nim'];
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Mahasiswa</title>
+</head>
+<body>
+
+<h1>Selamat datang, Mahasiswa dengan NIM: <?php echo $nim; ?></h1>
+<p>Ini adalah halaman dashboard mahasiswa.</p>
+
+</body>
+</html>
